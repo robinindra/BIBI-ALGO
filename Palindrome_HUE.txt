@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class proofPalindrom 
+{
+
+	  public static boolean PalProof(String s)
+	    {
+	        if(s.length() == 0 || s.length() == 1)
+	        {
+	            return true;
+	        }
+	        if(s.charAt(0) == s.charAt(s.length()-1))
+	        {
+	            return PalProof(s.substring(1, s.length()-1));
+	        }
+	        return false;
+	    }
+
+	    public static void main(String[]args)
+	    {
+	        Scanner sc = new Scanner(System.in);
+	        System.out.println("Geben Sie ein Wort ein, welches sie überprüfen wollen: ");
+	        String x = sc.nextLine();
+	      //  x = x.toLowerCase();
+	        if(PalProof(x))
+	            System.out.println(x + " ist ein Palindrom");
+	        else
+	            System.out.println(x + " ist kein Palindrom");
+	        sc.close();
+	    }
+}
