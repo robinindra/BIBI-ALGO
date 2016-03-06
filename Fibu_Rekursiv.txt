@@ -1,0 +1,36 @@
+import java.math.BigInteger;
+
+public class FibonacciRekursiv 
+{
+
+	private static final BigInteger INT_0 = new BigInteger("0"); 
+	private static final BigInteger INT_1 = new BigInteger("1"); 
+	public static BigInteger fibu(final int n) { 
+	    if (n <= 2) { 
+	        return (n > 0) ? INT_1 : INT_0; 
+	    } 
+	    BigInteger fib1 = INT_0; 
+	    BigInteger fib2 = INT_1; 
+	    for (int i = 1; i < n; i++) { 
+	        final BigInteger newFib = fib1.add(fib2); 
+	        fib1 = fib2; 
+	        fib2 = newFib; 
+	    } 
+	    return fib2; 
+	}
+	
+	
+	public static long fib(final int n) { 
+	    if (n <= 2) { 
+	        return (n > 0) ? 1 : 0; 
+	    } 
+	    return fib(n - 1) + fib(n - 2); 
+	}
+	
+   public static void main(final String[] args) { 
+	   
+   //    System.out.println(fib(30)); 
+   //    System.out.println(fibu(1000));
+   } 
+	
+}
